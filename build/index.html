@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <title>Login</title>
+
+  <script>
+
+  window.onload = function() {
+          store();
+  $("#login_button").click(function() {
+  //  console.log("TRAFSDFSD");
+    check();
+  });
+    //
+  //var _name = document.getElementById('name');
+  //var _pw = document.getElementById('pw');
+
+  // storing input from register-form
+function store() {
+  localStorage.setItem('user_name', 'admin');
+  localStorage.setItem('user_password', 'admin');
+
+  //  localStorage.setItem('user_name', 'usuario01');
+//    localStorage.setItem('user_password', '123456');
+
+  //  localStorage.setItem('user_name', 'usuario02');
+  //  localStorage.setItem('user_password', '123456');
+
+//    localStorage.setItem('user_name','usuario03');
+//    localStorage.setItem('user_password', '123456');
+
+//    localStorage.setItem('user_name', 'usuario04');
+//    localStorage.setItem('user_password', '123456');
+
+//    localStorage.setItem('user_name', 'usuario05');
+//    localStorage.setItem('user_password', '123456');
+}
+
+// check if stored data from register-form is equal to entered data in the   login-form
+function check() {
+
+    // stored data from the register-form
+    var storedName = localStorage.getItem('user_name');
+    var storedPw = localStorage.getItem('user_password');
+
+    // entered data from the login-form
+    var userName = document.getElementById('user_name');
+    var userPw = document.getElementById('user_password');
+
+    // check if stored data from register-form is equal to data from login form
+
+    if(userName.value == storedName && userPw.value == storedPw) {
+          alert('You are loged in.');
+      }else {
+          alert('ERROR.');
+      }
+  }
+}
+  </script>
+</head>
+
+<body>
+  <header class="w3-container w3-blue">
+    <h1 class="w3-lobster w3-center">Banco Rural</h1>
+
+  </header>
+
+<div class="w3-container w3-padding w3-left w3-min-width">
+
+  <div class="w3-card-2 w3-round">
+  <div class="w3-container w3-light-gray">
+    <h4>Ingresar a su cuenta</h4>
+  </div>
+  <form class="w3-container w3-card-2" action="transaction.html">
+    <p>
+      <input class="w3-input w3-border w3-round" id="user_name" placeholder="Usuario" name="usuario" type="text" tabindex="1"  autofocus>
+    </p>
+    <p>
+      <input class="w3-input w3-border w3-round" id="user_password" placeholder="Clave" name="clave" type="password" tabindex="2" required>
+    </p>
+    <p>
+      <button class="w3-btn-block w3-round w3-deep-orange" id="login_button" >Ingresar</button>
+    </p>
+    <p class="w3-hover-text-blue w3-center w3-small">
+      ¿Olvidó clave?
+    </p>
+    <p class="w3-hover-text-blue w3-center w3-small">
+      ¿No tienes usuario? Afíliate
+    </p>
+
+  </form>
+  </div>
+
+</div>
+
+
+
+<div class="w3-container w3-padding w3-left w3-min-width  w3-max-width">
+
+  <div class="w3-card-2 w3-round">
+
+  <div class="w3-container w3-light-gray w3-round w3-center w3-text-deep-orange">
+    <h4>Efectivo Digital</h4>
+  </div>
+  <div class="w3-container">
+
+    <p>
+      Ahora puedes retirar <b>soles digitales</b> de tu cuenta como si fuera efectivo. En vez de ir al cajero automático, sólo tienes que ingresar a tu banca por Internet.
+    </p>
+
+      <ol>
+        <li>Abre tu billetera electrónica gratis en <a href="https://billetera.blockchainperu.org">aquí</a></li>
+        <li>Ingresa a tu cuenta a la izquierda</li>
+      <li>Elije: "retirar soles digitales"</li>
+      <li>Ingresa tu dirección de billetera (o la de otra persona)</li>
+      <li>Cualquier persona puede aceptar soles digitales SIN abrir cuenta.</li>
+    </ol>
+
+
+  </div>
+</div>
+
+</div>
+
+<div class="w3-container w3-padding w3-left w3-min-width">
+
+  <div class="w3-card-2 w3-round">
+
+  <div class="w3-container w3-light-gray w3-round">
+    <h4>Servicios</h4>
+  </div>
+  <div class="w3-container">
+
+<ul class="w3-ul">
+    <li class="w3-hover-deep-orange">Préstamos</li>
+    <li class="w3-hover-deep-orange">Ahorros</li>
+    <li class="w3-hover-deep-orange">Cartas Fianza</li>
+    <li class="w3-hover-deep-orange">Ubicaciones</li>
+    <li class="w3-hover-deep-orange">Transparencia</li>
+  </ul>
+  </div>
+</div>
+
+</div>
+
+
+<footer class="w3-container w3-blue w3-clear w3-tiny w3-padding w3-center">
+  &copy; 2017 Bancro Rural del Perú S.A.
+</footer>
+
+</body>
+</html>

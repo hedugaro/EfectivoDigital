@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+.w3-lobster {
+    font-family: "Lobster", serif;
+}
+.w3-clear{
+    clear: both;
+}
+.w3-min-width {
+  min-width:360px;
+}
+.w3-max-width {
+  max-width:500px;
+}
+b { 
+    font-weight: bold;
+}
+.city {
+    float: left;
+    margin: 5px;
+    padding: 10px;
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid blue;
+}

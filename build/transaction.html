@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Transacción</title>
+
+ <script>
+    function yesnoCheck(that) {
+        if (that.value == "otra") {
+
+            document.getElementById("ifYes").style.display = "block";
+        } else {
+            document.getElementById("ifYes").style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="./ethereumjs-tx.js"></script>
+<script src="./lightwallet.min.js"></script>
+<script src="./app.js"></script>
+
+
+</head>
+
+<body>
+    <header class="w3-container w3-blue">
+      <h1 class="w3-lobster w3-center">Banco Rural</h1>
+    </header>
+
+
+<div class="w3-container w3-padding w3-left w3-min-width">
+
+  <div class="w3-card-2 w3-round">
+  <div class="w3-container w3-light-gray">
+    <h4>Saldos</h4>
+  </div>
+  <div class="w3-container w3-card-2">
+   <p>
+   Hola, Juan Pérez.
+   </p>
+
+  <table class="w3-table w3-border">
+    <thead>
+      <tr>
+        <th>Cuenta</th>
+        <th>Saldo disponible</th>
+
+      </tr>
+    </thead>
+    <tr class="w3-hover-light-grey">
+      <td>Ahorros soles</td>
+      <td>S/ 1.421,87</td>
+
+    </tr>
+    <tr class="w3-hover-light-grey">
+      <td>Línea de crédito</td>
+      <td>S/ 1.500,00</td>
+
+    </tr>
+
+  </table>
+    <p class="w3-hover-text-blue w3-center w3-small">
+      Ver últimos movimientos
+    </p>
+  </div>
+  </div>
+
+</div>
+
+<div class="w3-container w3-padding w3-left w3-min-width">
+
+  <div class="w3-card-2 w3-round">
+  <div class="w3-container w3-light-gray">
+    <h4>Retirar Soles Digitales</h4>
+  </div>
+
+
+  </div>
+  <form class="w3-container w3-card-2 w3-padding">
+
+     <select class="w3-select w3-border" name="option">
+        <option value="1" >Ahorros soles</option>
+        <option value="2">Línea de crédito</option>
+
+      </select>
+    <p>
+      <input class="w3-input w3-border w3-round" placeholder="Monto" name="monto" type="number" tabindex="1" autofocus id="monto_billetera">
+    </p>
+    <p>Direccion de Billetera: </p>
+    <select class="w3-select w3-border" id="billetera" onchange="yesnoCheck(this);">
+        <option value="mia" >0x8d08E71b75c92D93b32D98aC746b2BEe0Ba5c604</option>
+        <option value="otra">A otra billetera</option>
+
+      </select>
+    <p>
+    <div id="ifYes" style="display: none;">
+      <input class="w3-input w3-border w3-round" placeholder="Dirección de otra billetera" type="text" tabindex="2" id="direccion_billetera">
+    </div>
+    </p>
+
+  <p>Limite de Gas: </p>
+
+    <p>
+      <input class="w3-input w3-border w3-round" placeholder="Limite de Gas" value="590000" name="Limite de Gas" type="number" tabindex="1" autofocus id="limite_gas">
+    </p>
+
+    <p>
+      <button class="w3-btn-block w3-round w3-deep-orange" id="button_retirar" >Retirar</button>
+    </p>
+
+
+  </form>
+  </div>
+
+</div>
+
+<div class="w3-container w3-padding w3-left w3-min-width w3-max-width">
+
+  <div class="w3-card-2 w3-round">
+  <div class="w3-container w3-light-gray">
+    <h4>Depositar Soles Digitales</h4>
+  </div>
+  <div class="w3-container w3-card-2">
+
+
+<ol>
+        <li>Si no tienes billetera, crea una gratis en <a href="https://billetera.blockchainperu.org">aquí</a></li>
+        <li>Abrir billetera y elegir "enviar"</li>
+      <li>Elije: "retirar soles digitales"</li>
+      <li >Enviar a la dirección abajo y ¡listo!</li>
+    </ol>
+    <p class="w3-tiny w3-center">
+      0x8d08E71b75c92D93b32D98aC746b2BEe0Ba5c604
+    </p>
+  </div>
+  </div>
+
+</div>
+
+
+<!-- Success message -->
+        <div class="alert alert-success" id="success_transaction">Tu retiro de soles digitales se ha realizado con éxito <i class="glyphicon glyphicon-thumbs-up"></i> You transfered the item succesfully.</div>
+
+        <!-- Fail message -->
+        <div class="alert alert-danger" id="fail_transaction">Hubo un error en tu retiro de soles <i class="glyphicon glyphicon-thumbs-up"></i> You did not transfered the item succesfully.</div>
+
+
+  <footer class="w3-container w3-blue w3-clear w3-tiny w3-padding w3-center">
+  &copy; 2017 Banco Rural del Perú S.A.
+  </footer>
+
+</body>
+</html>
